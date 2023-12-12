@@ -51,7 +51,7 @@ const VoiceToText = ({ sentence, setSentence }) => {
     for (let i = 0; i < event.results.length; i++) {
       if (event.results[i].isFinal) {
         const spokenSentence = event.results[i][0].transcript;
-        console.log('Spoken Sentence:', spokenSentence);
+        //console.log('Spoken Sentence:', spokenSentence);
         setSentence(spokenSentence);
       }
     }
@@ -64,10 +64,6 @@ const VoiceToText = ({ sentence, setSentence }) => {
   return (
     <div>
       <button onClick={toggleListening}>{isListening ? 'Stop Listening' : 'Start Listening'}</button>
-      <div className="sentence-display">
-        <h2>Sentence:</h2>
-        <p>{sentence}</p>
-      </div>
     </div>
   );
 };
